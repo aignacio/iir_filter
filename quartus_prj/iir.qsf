@@ -60,8 +60,8 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH testbench_500Hz
 set_global_assignment -name EDA_TEST_BENCH_NAME testbench_500Hz -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testbench_500Hz
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench_500Hz -section_id testbench_500Hz
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE filter_tb.v
 set_global_assignment -name VERILOG_FILE iir.v
 set_global_assignment -name EDA_TEST_BENCH_FILE filter_tb.v -section_id testbench_500Hz
 set_global_assignment -name TEXT_FILE ../../iir/iir.txt
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,52 @@
+module iir (
+	input clk,
+	input rst,
+	input wire signed [31:0] x,
+	output wire signed [31:0] y
+);
+  // -------------- SECTION 1 --------------
+	reg signed [31:0] z1_a_s1, z2_a_s1,
+										z1_b_s1, z2_b_s1;
+
+	wire signed [31:0] z1_a_next_s1, z2_a_next_s1,
+										 z1_b_next_s1, z2_b_next_s1;
+
+	wire signed [31:0] b_out_s1, a_out_s1;
+
+	wire signed [31:0] a1_s1, a2_s1,
+							       b0_s1, b1_s1, b2_s1;
+
+	assign b0_s1 = 5509;
+	assign b1_s1 = 11019;
+	assign b2_s1 = 5509;
+
+	assign a1_s1 = -1998080;
+	assign a2_s1 = 971584;
+
+	assign z1_b_next_s1 = x;
+	assign z2_b_next_s1 = z1_b_s1;
+
+	assign z1_a_next_s1 = a_out_s1;
+	assign z2_a_next_s1 = z1_a_s1;
+
+	assign b_out_s1 = x*b0_s1 + z1_b_s1*b1_s1 + z2_b_s1*b2_s1;
+	assign a_out_s1 = b_out_s1 - z1_a_s1*a1_s1 - z2_a_s1*a2_s1;
+
+	assign y = a_out_s1 >> 20;
+
+	always @ (posedge clk or negedge rst) begin
+		if (rst == 1'b0) begin
+			z1_a_s1 <= 32'd0;
+			z2_a_s1 <= 32'd0;
+
+			z1_b_s1 <= 32'd0;
+			z2_b_s1 <= 32'd0;
+		end else begin
+			z1_a_s1 <= z1_a_next_s1;
+			z2_a_s1 <= z2_a_next_s1;
+
+			z1_b_s1 <= z1_b_next_s1;
+			z2_b_s1 <= z2_b_next_s1;
+		end
+	end
+endmodule

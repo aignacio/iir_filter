@@ -1,0 +1,476 @@
+Analysis & Synthesis report for iir
+Thu Jan 11 21:56:13 2018
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Jan 11 21:56:13 2018       ;
+; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                   ; iir                                         ;
+; Top-level Entity Name           ; iir                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 256                                         ;
+; Total pins                      ; 66                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 57                                          ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; iir                ; iir                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+---------+
+; iir.v                            ; yes             ; User Verilog HDL File  ; /home/aignacio/projects/iir/quartus_prj/iir.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 588       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 1122      ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 0         ;
+;     -- 5 input functions                    ; 0         ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 1122      ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 256       ;
+;                                             ;           ;
+; I/O pins                                    ; 66        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 57        ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 256       ;
+; Total fan-out                               ; 5405      ;
+; Average fan-out                             ; 3.45      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |iir                       ; 1122 (1122)         ; 256 (256)                 ; 0                 ; 57         ; 66   ; 0            ; |iir                ; iir         ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary    ;
++-----------------------------------+-------------+
+; Statistic                         ; Number Used ;
++-----------------------------------+-------------+
+; Two Independent 18x18             ; 30          ;
+; Sum of two 18x18                  ; 15          ;
+; Independent 27x27                 ; 12          ;
+; Total number of DSP blocks        ; 57          ;
+;                                   ;             ;
+; Fixed Point Unsigned Multiplier   ; 60          ;
+; Fixed Point Mixed Sign Multiplier ; 12          ;
++-----------------------------------+-------------+
+
+
++-------------------------------------------------------------------+
+; Registers Removed During Synthesis                                ;
++-----------------------------------------+-------------------------+
+; Register name                           ; Reason for Removal      ;
++-----------------------------------------+-------------------------+
+; z2_a_s3[54..63]                         ; Lost fanout             ;
+; z2_a_s2[54..63]                         ; Lost fanout             ;
+; z2_a_s1[54..63]                         ; Lost fanout             ;
+; z1_a_s3[54..63]                         ; Lost fanout             ;
+; z1_a_s2[54..63]                         ; Lost fanout             ;
+; z1_a_s1[54..63]                         ; Lost fanout             ;
+; z2_b_s3[54..63]                         ; Lost fanout             ;
+; z2_b_s2[54..63]                         ; Lost fanout             ;
+; z2_b_s1[54..63]                         ; Lost fanout             ;
+; z1_b_s3[54..63]                         ; Lost fanout             ;
+; z1_b_s2[54..63]                         ; Lost fanout             ;
+; z1_b_s1[54..63]                         ; Lost fanout             ;
+; z2_a_s1[31..52]                         ; Merged with z2_a_s1[53] ;
+; z2_b_s1[31..52]                         ; Merged with z2_b_s1[53] ;
+; z2_a_s2[31..52]                         ; Merged with z2_a_s2[53] ;
+; z2_b_s2[31..52]                         ; Merged with z2_b_s2[53] ;
+; z2_a_s3[31..52]                         ; Merged with z2_a_s3[53] ;
+; z2_b_s3[31..52]                         ; Merged with z2_b_s3[53] ;
+; z1_b_s3[0]                              ; Merged with z1_a_s2[0]  ;
+; z1_b_s3[1]                              ; Merged with z1_a_s2[1]  ;
+; z1_b_s3[2]                              ; Merged with z1_a_s2[2]  ;
+; z1_b_s3[3]                              ; Merged with z1_a_s2[3]  ;
+; z1_b_s3[4]                              ; Merged with z1_a_s2[4]  ;
+; z1_b_s3[5]                              ; Merged with z1_a_s2[5]  ;
+; z1_b_s3[6]                              ; Merged with z1_a_s2[6]  ;
+; z1_b_s3[7]                              ; Merged with z1_a_s2[7]  ;
+; z1_b_s3[8]                              ; Merged with z1_a_s2[8]  ;
+; z1_b_s3[9]                              ; Merged with z1_a_s2[9]  ;
+; z1_b_s3[10]                             ; Merged with z1_a_s2[10] ;
+; z1_b_s3[11]                             ; Merged with z1_a_s2[11] ;
+; z1_b_s3[12]                             ; Merged with z1_a_s2[12] ;
+; z1_b_s3[13]                             ; Merged with z1_a_s2[13] ;
+; z1_b_s3[14]                             ; Merged with z1_a_s2[14] ;
+; z1_b_s3[15]                             ; Merged with z1_a_s2[15] ;
+; z1_b_s3[16]                             ; Merged with z1_a_s2[16] ;
+; z1_b_s3[17]                             ; Merged with z1_a_s2[17] ;
+; z1_b_s3[18]                             ; Merged with z1_a_s2[18] ;
+; z1_b_s3[19]                             ; Merged with z1_a_s2[19] ;
+; z1_b_s3[20]                             ; Merged with z1_a_s2[20] ;
+; z1_b_s3[21]                             ; Merged with z1_a_s2[21] ;
+; z1_b_s3[22]                             ; Merged with z1_a_s2[22] ;
+; z1_b_s3[23]                             ; Merged with z1_a_s2[23] ;
+; z1_b_s3[24]                             ; Merged with z1_a_s2[24] ;
+; z1_b_s3[25]                             ; Merged with z1_a_s2[25] ;
+; z1_b_s3[26]                             ; Merged with z1_a_s2[26] ;
+; z1_b_s3[27]                             ; Merged with z1_a_s2[27] ;
+; z1_b_s3[28]                             ; Merged with z1_a_s2[28] ;
+; z1_b_s3[29]                             ; Merged with z1_a_s2[29] ;
+; z1_b_s3[30]                             ; Merged with z1_a_s2[30] ;
+; z1_a_s2[32..53]                         ; Merged with z1_a_s2[31] ;
+; z1_b_s3[31..53]                         ; Merged with z1_a_s2[31] ;
+; z2_b_s3[0]                              ; Merged with z2_a_s2[0]  ;
+; z2_b_s3[1]                              ; Merged with z2_a_s2[1]  ;
+; z2_b_s3[2]                              ; Merged with z2_a_s2[2]  ;
+; z2_b_s3[3]                              ; Merged with z2_a_s2[3]  ;
+; z2_b_s3[4]                              ; Merged with z2_a_s2[4]  ;
+; z2_b_s3[5]                              ; Merged with z2_a_s2[5]  ;
+; z2_b_s3[6]                              ; Merged with z2_a_s2[6]  ;
+; z2_b_s3[7]                              ; Merged with z2_a_s2[7]  ;
+; z2_b_s3[8]                              ; Merged with z2_a_s2[8]  ;
+; z2_b_s3[9]                              ; Merged with z2_a_s2[9]  ;
+; z2_b_s3[10]                             ; Merged with z2_a_s2[10] ;
+; z2_b_s3[11]                             ; Merged with z2_a_s2[11] ;
+; z2_b_s3[12]                             ; Merged with z2_a_s2[12] ;
+; z2_b_s3[13]                             ; Merged with z2_a_s2[13] ;
+; z2_b_s3[14]                             ; Merged with z2_a_s2[14] ;
+; z2_b_s3[15]                             ; Merged with z2_a_s2[15] ;
+; z2_b_s3[16]                             ; Merged with z2_a_s2[16] ;
+; z2_b_s3[17]                             ; Merged with z2_a_s2[17] ;
+; z2_b_s3[18]                             ; Merged with z2_a_s2[18] ;
+; z2_b_s3[19]                             ; Merged with z2_a_s2[19] ;
+; z2_b_s3[20]                             ; Merged with z2_a_s2[20] ;
+; z2_b_s3[21]                             ; Merged with z2_a_s2[21] ;
+; z2_b_s3[22]                             ; Merged with z2_a_s2[22] ;
+; z2_b_s3[23]                             ; Merged with z2_a_s2[23] ;
+; z2_b_s3[24]                             ; Merged with z2_a_s2[24] ;
+; z2_b_s3[25]                             ; Merged with z2_a_s2[25] ;
+; z2_b_s3[26]                             ; Merged with z2_a_s2[26] ;
+; z2_b_s3[27]                             ; Merged with z2_a_s2[27] ;
+; z2_b_s3[28]                             ; Merged with z2_a_s2[28] ;
+; z2_b_s3[29]                             ; Merged with z2_a_s2[29] ;
+; z2_b_s3[30]                             ; Merged with z2_a_s2[30] ;
+; z2_b_s3[53]                             ; Merged with z2_a_s2[53] ;
+; z1_a_s3[32..53]                         ; Merged with z1_a_s3[31] ;
+; z1_b_s2[0]                              ; Merged with z1_a_s1[0]  ;
+; z1_b_s2[1]                              ; Merged with z1_a_s1[1]  ;
+; z1_b_s2[2]                              ; Merged with z1_a_s1[2]  ;
+; z1_b_s2[3]                              ; Merged with z1_a_s1[3]  ;
+; z1_b_s2[4]                              ; Merged with z1_a_s1[4]  ;
+; z1_b_s2[5]                              ; Merged with z1_a_s1[5]  ;
+; z1_b_s2[6]                              ; Merged with z1_a_s1[6]  ;
+; z1_b_s2[7]                              ; Merged with z1_a_s1[7]  ;
+; z1_b_s2[8]                              ; Merged with z1_a_s1[8]  ;
+; z1_b_s2[9]                              ; Merged with z1_a_s1[9]  ;
+; z1_b_s2[10]                             ; Merged with z1_a_s1[10] ;
+; z1_b_s2[11]                             ; Merged with z1_a_s1[11] ;
+; z1_b_s2[12]                             ; Merged with z1_a_s1[12] ;
+; z1_b_s2[13]                             ; Merged with z1_a_s1[13] ;
+; z1_b_s2[14]                             ; Merged with z1_a_s1[14] ;
+; z1_b_s2[15]                             ; Merged with z1_a_s1[15] ;
+; z1_b_s2[16]                             ; Merged with z1_a_s1[16] ;
+; z1_b_s2[17]                             ; Merged with z1_a_s1[17] ;
+; z1_b_s2[18]                             ; Merged with z1_a_s1[18] ;
+; z1_b_s2[19]                             ; Merged with z1_a_s1[19] ;
+; z1_b_s2[20]                             ; Merged with z1_a_s1[20] ;
+; z1_b_s2[21]                             ; Merged with z1_a_s1[21] ;
+; z1_b_s2[22]                             ; Merged with z1_a_s1[22] ;
+; z1_b_s2[23]                             ; Merged with z1_a_s1[23] ;
+; z1_b_s2[24]                             ; Merged with z1_a_s1[24] ;
+; z1_b_s2[25]                             ; Merged with z1_a_s1[25] ;
+; z1_b_s2[26]                             ; Merged with z1_a_s1[26] ;
+; z1_b_s2[27]                             ; Merged with z1_a_s1[27] ;
+; z1_b_s2[28]                             ; Merged with z1_a_s1[28] ;
+; z1_b_s2[29]                             ; Merged with z1_a_s1[29] ;
+; z1_b_s2[30]                             ; Merged with z1_a_s1[30] ;
+; z1_a_s1[32..53]                         ; Merged with z1_a_s1[31] ;
+; z1_b_s2[31..53]                         ; Merged with z1_a_s1[31] ;
+; z2_b_s2[0]                              ; Merged with z2_a_s1[0]  ;
+; z2_b_s2[1]                              ; Merged with z2_a_s1[1]  ;
+; z2_b_s2[2]                              ; Merged with z2_a_s1[2]  ;
+; z2_b_s2[3]                              ; Merged with z2_a_s1[3]  ;
+; z2_b_s2[4]                              ; Merged with z2_a_s1[4]  ;
+; z2_b_s2[5]                              ; Merged with z2_a_s1[5]  ;
+; z2_b_s2[6]                              ; Merged with z2_a_s1[6]  ;
+; z2_b_s2[7]                              ; Merged with z2_a_s1[7]  ;
+; z2_b_s2[8]                              ; Merged with z2_a_s1[8]  ;
+; z2_b_s2[9]                              ; Merged with z2_a_s1[9]  ;
+; z2_b_s2[10]                             ; Merged with z2_a_s1[10] ;
+; z2_b_s2[11]                             ; Merged with z2_a_s1[11] ;
+; z2_b_s2[12]                             ; Merged with z2_a_s1[12] ;
+; z2_b_s2[13]                             ; Merged with z2_a_s1[13] ;
+; z2_b_s2[14]                             ; Merged with z2_a_s1[14] ;
+; z2_b_s2[15]                             ; Merged with z2_a_s1[15] ;
+; z2_b_s2[16]                             ; Merged with z2_a_s1[16] ;
+; z2_b_s2[17]                             ; Merged with z2_a_s1[17] ;
+; z2_b_s2[18]                             ; Merged with z2_a_s1[18] ;
+; z2_b_s2[19]                             ; Merged with z2_a_s1[19] ;
+; z2_b_s2[20]                             ; Merged with z2_a_s1[20] ;
+; z2_b_s2[21]                             ; Merged with z2_a_s1[21] ;
+; z2_b_s2[22]                             ; Merged with z2_a_s1[22] ;
+; z2_b_s2[23]                             ; Merged with z2_a_s1[23] ;
+; z2_b_s2[24]                             ; Merged with z2_a_s1[24] ;
+; z2_b_s2[25]                             ; Merged with z2_a_s1[25] ;
+; z2_b_s2[26]                             ; Merged with z2_a_s1[26] ;
+; z2_b_s2[27]                             ; Merged with z2_a_s1[27] ;
+; z2_b_s2[28]                             ; Merged with z2_a_s1[28] ;
+; z2_b_s2[29]                             ; Merged with z2_a_s1[29] ;
+; z2_b_s2[30]                             ; Merged with z2_a_s1[30] ;
+; z2_b_s2[53]                             ; Merged with z2_a_s1[53] ;
+; z1_b_s1[32..53]                         ; Merged with z1_b_s1[31] ;
+; Total Number of Removed Registers = 512 ;                         ;
++-----------------------------------------+-------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 256   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 256   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 256                         ;
+;     CLR               ; 256                         ;
+; arriav_lcell_comb     ; 1122                        ;
+;     shared            ; 1122                        ;
+;         0 data inputs ; 210                         ;
+;         1 data inputs ; 33                          ;
+;         2 data inputs ; 132                         ;
+;         3 data inputs ; 747                         ;
+; arriav_mac            ; 57                          ;
+; boundary_port         ; 66                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.50                        ;
+; Average LUT depth     ; 6.25                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Jan 11 21:55:42 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iir -c iir
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file filter_tb.v
+    Info (12023): Found entity 1: testbench_500Hz File: /home/aignacio/projects/iir/quartus_prj/filter_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file iir.v
+    Info (12023): Found entity 1: iir File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 1
+Info (12127): Elaborating entity "iir" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at iir.v(34): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 34
+Warning (10230): Verilog HDL assignment warning at iir.v(36): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 36
+Warning (10230): Verilog HDL assignment warning at iir.v(39): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 39
+Warning (10230): Verilog HDL assignment warning at iir.v(42): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 42
+Warning (10230): Verilog HDL assignment warning at iir.v(44): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 44
+Warning (10230): Verilog HDL assignment warning at iir.v(47): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 47
+Warning (10230): Verilog HDL assignment warning at iir.v(50): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 50
+Warning (10230): Verilog HDL assignment warning at iir.v(52): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 52
+Warning (10230): Verilog HDL assignment warning at iir.v(55): truncated value with size 64 to match size of target (32) File: /home/aignacio/projects/iir/quartus_prj/iir.v Line: 55
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 120 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1501 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 34 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 1378 logic cells
+    Info (21062): Implemented 57 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 1053 megabytes
+    Info: Processing ended: Thu Jan 11 21:56:13 2018
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:37
+
+
