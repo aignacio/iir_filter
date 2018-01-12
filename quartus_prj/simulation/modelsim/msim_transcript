@@ -11,29 +11,29 @@
 # 
 # vlog -vlog01compat -work work +incdir+/home/aignacio/projects/iir/quartus_prj {/home/aignacio/projects/iir/quartus_prj/iir.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:59:36 on Jan 11,2018
+# Start time: 22:20:08 on Jan 11,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aignacio/projects/iir/quartus_prj" /home/aignacio/projects/iir/quartus_prj/iir.v 
 # -- Compiling module iir
 # 
 # Top level modules:
 # 	iir
-# End time: 21:59:37 on Jan 11,2018, Elapsed time: 0:00:01
+# End time: 22:20:08 on Jan 11,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+/home/aignacio/projects/iir/quartus_prj {/home/aignacio/projects/iir/quartus_prj/filter_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:59:37 on Jan 11,2018
+# Start time: 22:20:08 on Jan 11,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aignacio/projects/iir/quartus_prj" /home/aignacio/projects/iir/quartus_prj/filter_tb.v 
 # -- Compiling module testbench_500Hz
 # 
 # Top level modules:
 # 	testbench_500Hz
-# End time: 21:59:37 on Jan 11,2018, Elapsed time: 0:00:00
+# End time: 22:20:08 on Jan 11,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  testbench_500Hz
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" testbench_500Hz 
-# Start time: 21:59:37 on Jan 11,2018
+# Start time: 22:20:08 on Jan 11,2018
 # Loading work.testbench_500Hz
 # Loading work.iir
 # 
@@ -47,13 +47,53 @@
 # ** Note: $stop    : /home/aignacio/projects/iir/quartus_prj/filter_tb.v(530)
 #    Time: 10416540 ns  Iteration: 0  Instance: /testbench_500Hz
 # Break in Module testbench_500Hz at /home/aignacio/projects/iir/quartus_prj/filter_tb.v line 530
-do /home/aignacio/projects/iir/quartus_prj/simulation/modelsim/wave.do
-RESTART
-# invalid command name "RESTART"
-restart
-run -all
+do iir_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying /opt/intelFPGA_lite/17.0/modelsim_ase/linuxaloem/../modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/aignacio/projects/iir/quartus_prj {/home/aignacio/projects/iir/quartus_prj/iir.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:26:28 on Jan 11,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aignacio/projects/iir/quartus_prj" /home/aignacio/projects/iir/quartus_prj/iir.v 
+# -- Compiling module iir
+# 
+# Top level modules:
+# 	iir
+# End time: 23:26:29 on Jan 11,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/aignacio/projects/iir/quartus_prj {/home/aignacio/projects/iir/quartus_prj/filter_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:26:29 on Jan 11,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aignacio/projects/iir/quartus_prj" /home/aignacio/projects/iir/quartus_prj/filter_tb.v 
+# -- Compiling module testbench_500Hz
+# 
+# Top level modules:
+# 	testbench_500Hz
+# End time: 23:26:29 on Jan 11,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  testbench_500Hz
+# End time: 23:26:35 on Jan 11,2018, Elapsed time: 1:06:27
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" testbench_500Hz 
+# Start time: 23:26:35 on Jan 11,2018
+# Loading work.testbench_500Hz
+# Loading work.iir
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# ** Note: $stop    : /home/aignacio/projects/iir/quartus_prj/filter_tb.v(530)
-#    Time: 10416540 ns  Iteration: 0  Instance: /testbench_500Hz
-# Break in Module testbench_500Hz at /home/aignacio/projects/iir/quartus_prj/filter_tb.v line 530
-# Break key hit
+# ** Note: $stop    : /home/aignacio/projects/iir/quartus_prj/filter_tb.v(1030)
+#    Time: 20833040 ns  Iteration: 0  Instance: /testbench_500Hz
+# Break in Module testbench_500Hz at /home/aignacio/projects/iir/quartus_prj/filter_tb.v line 1030

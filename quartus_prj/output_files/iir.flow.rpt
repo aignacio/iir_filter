@@ -1,5 +1,5 @@
 Flow report for iir
-Thu Jan 11 21:59:07 2018
+Thu Jan 11 22:19:24 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Jan 11 21:59:07 2018       ;
+; Flow Status                     ; Successful - Thu Jan 11 22:19:24 2018       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; iir                                         ;
 ; Top-level Entity Name           ; iir                                         ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/11/2018 21:55:43 ;
+; Start date & time ; 01/11/2018 22:16:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; iir                 ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id      ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------+
-; COMPILER_SIGNATURE_ID                ; 123658581673895.151571494328953        ; --            ; --          ; --              ;
+; COMPILER_SIGNATURE_ID                ; 123658581673895.151571620704056        ; --            ; --          ; --              ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; testbench_500Hz ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench_500Hz                        ; --            ; --          ; eda_simulation  ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation  ;
@@ -105,12 +105,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:29     ; 1.0                     ; 1005 MB             ; 00:00:36                           ;
-; Fitter                    ; 00:02:15     ; 1.1                     ; 2229 MB             ; 00:03:37                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 994 MB              ; 00:00:09                           ;
-; TimeQuest Timing Analyzer ; 00:00:15     ; 1.4                     ; 1267 MB             ; 00:00:19                           ;
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 1004 MB             ; 00:00:39                           ;
+; Fitter                    ; 00:01:44     ; 1.1                     ; 2230 MB             ; 00:03:04                           ;
+; Assembler                 ; 00:00:10     ; 1.0                     ; 996 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:17     ; 1.5                     ; 1269 MB             ; 00:00:24                           ;
 ; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1189 MB             ; 00:00:02                           ;
-; Total                     ; 00:03:12     ; --                      ; --                  ; 00:04:43                           ;
+; Total                     ; 00:02:32     ; --                      ; --                  ; 00:04:19                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

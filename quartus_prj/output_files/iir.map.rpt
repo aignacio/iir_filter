@@ -1,5 +1,5 @@
 Analysis & Synthesis report for iir
-Thu Jan 11 21:56:13 2018
+Thu Jan 11 22:17:07 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jan 11 21:56:13 2018       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jan 11 22:17:06 2018       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; iir                                         ;
 ; Top-level Entity Name           ; iir                                         ;
@@ -165,7 +165,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -430,7 +430,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -440,7 +440,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Jan 11 21:55:42 2018
+    Info: Processing started: Thu Jan 11 22:16:46 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iir -c iir
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -468,9 +468,9 @@ Info (21057): Implemented 1501 device resources after synthesis - the final reso
     Info (21061): Implemented 1378 logic cells
     Info (21062): Implemented 57 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 1053 megabytes
-    Info: Processing ended: Thu Jan 11 21:56:13 2018
-    Info: Elapsed time: 00:00:31
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 1050 megabytes
+    Info: Processing ended: Thu Jan 11 22:17:07 2018
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:40
 
 

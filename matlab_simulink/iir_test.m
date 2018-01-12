@@ -45,12 +45,13 @@ fprintf('S3 -> b0=%d b1=%d b2=%d / a0=%d a1=%d a2=%d\n',round(b0*k*(f)),round(b1
 
 N=500;
 n=0:N-1;
-f=500;
+f=5000;
 f2=10000;
 fs=48000;
-x=round(300*sin(2*pi*(f/fs)*n)+300*sin(2*pi*(f2/fs)*n));
+x=round(300*sin(2*pi*(f/fs)*n));
+%x = awgn(x,1,'measured');
 stem(n,x);
 for i=1:N
-    formatSpec = 'x = %d; #20833; // Sample(%d)\n';
+    formatSpec = 'x = %16.f; #20833; // Sample(%d)\n';
     fprintf(formatSpec,x(i),i);
 end
