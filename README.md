@@ -3,17 +3,17 @@
 
 ![noise](df1.png)
 
-** Developer: ** Ânderson I. Silva
+**Developer:** Ânderson I. Silva
 
-** Repository: ** https://github.com/aignacio/iir_filter
+**Repository:** https://github.com/aignacio/iir_filter
 
-** Parameters: **
+**Parameters:**
 * Fs : 48000 Samples/s
 * Fc : 1000 Hz
 * Fs : 1500 Hz
 * Apass: 1dB
 * Astop: -15dB
-* Filter Structure    : Direct-Form I, Second-Order Sections
+* Filter Structure    : Direct-Form I, Second-Order **Sections**
 * Architecture: Cascade
 * Number of Sections  : 3
 * Stable              : Yes
@@ -23,15 +23,15 @@
 ![noise](iir_ASK.png)
 ![noise](noise_filtering.png)
 
-** Design Method Information **
+**Design Method Information**
 * Design Algorithm : butter
 
-** Design Options **
+**Design Options**
 * Match Exactly : stopband
 * Scale Norm    : no scaling
 * SystemObject  : false
 
-** Design Specifications **
+**Design Specifications**
 * Sample Rate     : N/A (normalized frequency)
 * Response        : Lowpass
 * Specification   : Fp,Fst,Ap,Ast
@@ -40,7 +40,7 @@
 * Stopband Edge   : 0.0625
 * Passband Edge   : 0.041667
 
-** Measurements **
+**Measurements**
 * Sample Rate      : N/A (normalized frequency)
 * Passband Edge    : 0.041667
 * 3-dB Point       : 0.047064
